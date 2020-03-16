@@ -5,7 +5,7 @@
         <classes>
             <class name="basic">
                 <methods>
-                    <include name="first"></include>
+                    <include name="signIn"></include>
                     <exclude name="second"></exclude>
                 </methods>
             </class>
