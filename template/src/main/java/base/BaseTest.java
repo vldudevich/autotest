@@ -17,14 +17,13 @@ public class BaseTest {
     public String platformName = "Android";
     public String deviceName = "Xioami";
     public String udid = "c80aee797d94";
-    public String app = "/Users/vladislav/Downloads/demo.apk";
+    public String app = "/Users/vladislav/Downloads/original.apk";
     public String automationName = "uiautomator2";
     public String url = "http://127.0.0.1:4723/wd/hub";
 
     @BeforeClass
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
 
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,platformName);
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,deviceName);
@@ -34,6 +33,7 @@ public class BaseTest {
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,automationName);
         driver = new AndroidDriver<MobileElement> (new URL(url),capabilities);
     }
+
     @AfterClass
     public void tearDown() {
         this.driver.quit();
