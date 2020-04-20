@@ -1,4 +1,5 @@
 import base.BaseTest;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,14 +7,12 @@ import pages.HomePage;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginTests extends BaseTest {
+public class TestLoginPage extends BaseTest {
 
-    HomePage homePage = new HomePage(driver);
-
-
+    AndroidDriver driver = BaseTest
     @Test
     public void loginSuccess() throws InterruptedException {
-        HomePage h = new HomePage(driver);
+        BaseTest h = new HomePage(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         h.setNameField("gfgfgf");
         h.chCountry("Argentina");

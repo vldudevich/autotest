@@ -3,8 +3,10 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/Users/vladislav/Documents/autoTesting/template">
         <classes>
-            <class name="LoginTests">
-
+            <class name="SignTests">
+                <methods>
+                    <include name="signSuccess"></include>
+                </methods>
             </class>
         </classes>
     </test>

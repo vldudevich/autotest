@@ -1,44 +1,34 @@
 package pages;
-
+import base.BasePage;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 
-public class HomePage extends Products {
+import java.util.concurrent.TimeUnit;
+
+public class HomePage extends BasePage {
 
     public AndroidDriver driver;
 
-    public String nameField = "com.androidsample.generalstore:id/nameField";
-    public String male = "com.androidsample.generalstore:id/radioMale";
-    public String female = "com.androidsample.generalstore:id/radioFeMale";
-    public String countryLst = "android:id/text1";
-    public String btnLetsShop = "com.androidsample.generalstore:id/btnLetsShop";
-    public String rtnBack = "com.androidsample.generalstore:id/appbar_btn_back";
+    By login = By.id("com.getbits.dev:id/btnSignIn");
+    By sign = By.id("com.getbits.dev:id/btnSignUp");
+
+
+
     public HomePage (AndroidDriver driver) {
         this.driver = driver;
+        this.driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
-    public void setNameField(String name) {
-        driver.findElementById(nameField).sendKeys(name);
+    public void should_be_home_page () {
+        assert driver.findElement(login).getText().equals("Login");
     }
 
-    public void setGender(String gender) {
-        if (gender == "male") {
-            driver.findElementById(male).click();
-        } else {
-            driver.findElementById(female).click();
-        }
-    }
-    public void chCountry(String country) {
-        driver.findElementById(countryLst).click();
-        driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textMatches(\"" + country + "\").instance(0))");
-        driver.findElementByXPath("//*[@text='"+country+"']").click();
+    public void go_to_login_page() {
+        driver.findElement(login).click();
     }
 
-    public void clBtnLetsShop() {
-        driver.findElementById(btnLetsShop).click();
-    }
-
-    public void clRtnBack() {
-        driver.findElementById(rtnBack).click();
+    public void go_to_sign_page() {
+        driver.findElement(sign).click();
     }
 
 }

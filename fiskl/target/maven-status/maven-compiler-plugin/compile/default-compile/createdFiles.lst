@@ -1,0 +1,5 @@
+pages/PasswordPage.class
+pages/LoginPage.class
+base/BaseTest.class
+pages/HomePage.class
+base/PageObject.class

@@ -4,24 +4,24 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BaseTest {
 
-    protected AndroidDriver driver;
+    public AndroidDriver driver;
 
     public String platformName = "Android";
     public String deviceName = "Xioami";
     public String udid = "c80aee797d94";
-    public String app = "/Users/vladislav/Downloads/original.apk";
+    public String app = "/Users/vladislav/Downloads/bits.apk";
     public String automationName = "uiautomator2";
     public String url = "http://127.0.0.1:4723/wd/hub";
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -34,7 +34,7 @@ public class BaseTest {
         driver = new AndroidDriver<MobileElement> (new URL(url),capabilities);
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         this.driver.quit();
     }

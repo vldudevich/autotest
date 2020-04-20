@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="/Users/vladislav/Documents/autoTesting/fiskl(failed)">
+    <classes>
+      <class name="LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="Test006failedLoginWrongEmailFormat"/>
+          <include name="Test005failedLoginWrongEmailFormat"/>
+          <include name="Test007failedLoginWrongEmailFormat"/>
+          <include name="tearDown"/>
+          <include name="Test004failedLoginWrongEmailFormat"/>
+          <include name="Test010successPasswordLogin"/>
+          <include name="Test002failedLoginWrongEmailFormat"/>
+          <include name="Test001failedLoginEmptyField"/>
+          <include name="Test003failedLoginWrongEmailFormat"/>
+          <include name="Test008successEmailLogin"/>
+        </methods>
+      </class> <!-- LoginTest -->
+    </classes>
+  </test> <!-- /Users/vladislav/Documents/autoTesting/fiskl(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
